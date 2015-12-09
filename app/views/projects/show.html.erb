@@ -1,15 +1,17 @@
-<h1>Projects</h1>
-<<<<<<< HEAD
+<h1><%= @project.name %></h1>
 
-<% @projects.each do |project| %>
-  <ul>
-    <li>Title: <%= project.title %></li>
-    <li>Description: <%= project.description %></li>
-  </ul>
-<% end %>
-=======
-  <ul>
-    <li>Title: <%= @project.name %></li>
+<div>
+	<ul>
     <li>Description: <%= @project.description %></li>
   </ul>
->>>>>>> 5eb16b4596c6b4d723889d9e64fd31ca4112dcf4
+</div>
+
+<div>
+	<% @project.rewards.each do |reward| %>
+  	<ul>
+    	<li>Title: <%= reward.title %></li>
+    	<li>Description: <%= reward.description %></li>
+    	<li>Amount: <%= reward.amount %></li>
+  	</ul>
+	<% end %>
+</div>

@@ -22,6 +22,7 @@
 		<%= f.fields_for :rewards do |reward| %>
 			<%= render 'reward_fields', f: reward %>
 		<% end %>
+		<%= link_to_add_association 'Add Reward', f, :rewards %>
 	</div>
 
 	<div class="field">

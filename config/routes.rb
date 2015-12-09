@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'reward/create'
+
 resources :projects
 resources :pledge, only: [:create]
 
