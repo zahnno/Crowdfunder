@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-resources :projects
-resources :pledge, only: [:create]
+resources :projects do
+	resources :comments, only: [:create, :destroy]
+	resources :pledges, only: [:create, :show, :new]
+end
 
-resources :comments, only: [:create, :destroy]
 resources :users, only: [:new, :create, :show]
 resources :sessions, only: [:new, :create, :destroy]
 

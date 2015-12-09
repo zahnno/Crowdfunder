@@ -3,3 +3,5 @@
     <li>Title: <%= @project.name %></li>
     <li>Description: <%= @project.description %></li>
   </ul>
+  <%= link_to "Plegde!", new_project_pledge_path(@project) %>
+<p><%= link_to "Back", projects_path(@projects) %> </p>
