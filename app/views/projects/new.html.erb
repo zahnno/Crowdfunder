@@ -1,0 +1,30 @@
+<h1>New Project</h1>
+
+<%= form_for @project do |f| %>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+
+	<div class="field">
+		<%= f.label :funding_goal %>
+		<%= f.text_field :funding_goal %>
+	</div>
+
+	<h2>Rewards</h2>
+
+	<div id="rewards">
+		<%= f.fields_for :rewards do |reward| %>
+			<%= render 'reward_fields', f: reward %>
+		<% end %>
+	</div>
+
+	<div class="field">
+		<%= f.submit %>
+	</div>
+<% end %>
