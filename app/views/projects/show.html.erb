@@ -1,7 +1,22 @@
-<h1>Projects</h1>
-  <ul>
-    <li>Title: <%= @project.name %></li>
+<h1><%= @project.name %></h1>
+
+<div>
+	<ul>
     <li>Description: <%= @project.description %></li>
   </ul>
+
   <%= link_to "Plegde!", new_project_pledge_path(@project) %>
 <p><%= link_to "Back", projects_path(@projects) %> </p>
+
+</div>
+
+<div>
+	<% @project.rewards.each do |reward| %>
+  	<ul>
+    	<li>Title: <%= reward.title %></li>
+    	<li>Description: <%= reward.description %></li>
+    	<li>Amount: <%= reward.amount %></li>
+  	</ul>
+	<% end %>
+</div>
+
