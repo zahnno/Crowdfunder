@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209192552) do
+ActiveRecord::Schema.define(version: 20151209213643) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151209192552) do
     t.integer  "owner_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "total"
   end
 
   create_table "rewards", force: :cascade do |t|

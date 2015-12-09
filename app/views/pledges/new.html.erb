@@ -19,3 +19,36 @@
       <%= f.submit %>
     </div>
     <% end %>
+
+    <div>
+  <% @project.rewards.each do |reward| %>
+    <ul>
+      <li>Title: <%= reward.title %></li>
+      <li>Description: <%= reward.description %></li>
+      <li>Amount: <%= reward.amount %></li>
+   <%= form_for([@project, @pledge]) do |f| %>
+    <% if @pledge.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pledge.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+        <ul>
+        <% @pledge.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+     
+      <%= f.hidden_field :amount, value: reward.amount%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Pledge" %>
+    </div>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+
+

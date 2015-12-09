@@ -5,11 +5,11 @@
     <li>Description: <%= @project.description %></li>
   </ul>
 
-  <%= link_to "Plegde!", new_project_pledge_path(@project) %>
+  <%= link_to "Pledge!", new_project_pledge_path(@project) %>
 <p><%= link_to "Back", projects_path(@projects) %> </p>
 
 </div>
-
+<h2>Rewards</h2>
 <div>
 	<% @project.rewards.each do |reward| %>
   	<ul>
