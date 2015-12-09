@@ -5,7 +5,12 @@
 <ul>
 	<% @projects.each do |project| %>
 		<li>
+<<<<<<< HEAD
 			<%= project.title %>
+=======
+			<%= link_to "#{project.name}", project_path(project) %>
+		    <%= project.funding_goal %>
+>>>>>>> 5eb16b4596c6b4d723889d9e64fd31ca4112dcf4
 		</li>
 	<% end %>
 </ul>

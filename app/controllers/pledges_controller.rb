@@ -7,12 +7,12 @@ def new
 end
 
 def create
-   @pledge = Pledge.new(param[:id])
+   @pledge = Pledge.new(pledge_params)
 end
 
 private 
-  def review_params
-  	params.require(:review).permit(:comment, :product_id)
+  def pledge_params
+  	params.require(:pledge).permit(:amount, :project_id)
   end
 
 end

@@ -4,7 +4,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
+
 		@product = Project.find(params[:id])
+
+		@project = Project.find(params[:id])
+
 	end
 
 	def new
@@ -12,7 +16,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
+
 		@product = Project.find(params[:id])
+
+		@project = Project.find(params[:id])
+
 	end
 
 	def create
@@ -43,6 +51,10 @@ class ProjectsController < ApplicationController
 
 	private
 		def project_params
+
 			params.require(:project).permit(:name, :description, :start_date, :end_date, :funding_goal, :owner_id, rewards_attributes: [:title, :description, :amount, :project_id, :_destroy])
+
+			params.require(:project).permit(:name, :description, :start_date, :end_date, :funding_goal, :owner_id, rewards_attributes: [:name, :description, :amount, :project_id, :_destroy])
+
 	end
 end
