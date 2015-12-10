@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
 	accepts_nested_attributes_for :rewards
 	has_many :users, through: :reservations
 	belongs_to :user
+	belongs_to :category
 end

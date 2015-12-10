@@ -1,5 +1,5 @@
 class AddIdToCategories < ActiveRecord::Migration
   def change
-  		add column :categories, :id, :integer
+  		add_column :categories, :category_id, :integer
   end
 end
