@@ -16,6 +16,15 @@
 		<%= f.text_field :funding_goal %>
 	</div>
 
+    <%= f.hidden_field :service, value: Time.now %>
+ 
+
+	<div class="field">
+		<%= f.label :end_date %>
+		<%= f.datetime_field :end_date %>
+	</div>
+
+
 	<h2>Rewards</h2>
 
 	<div id="rewards">
