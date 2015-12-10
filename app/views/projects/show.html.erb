@@ -1,12 +1,14 @@
+<%= link_to "Back", projects_path(@projects) %>
 <h1><%= @project.name %></h1>
 
 <div>
+
 	<ul>
     <li>Description: <%= @project.description %></li>
   </ul>
 
   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
-<p><%= link_to "Back", projects_path(@projects) %> </p>
+
 <p>Total Raised: <%= @project.total %>$</p>
 </div>
 <h2>Rewards</h2>
