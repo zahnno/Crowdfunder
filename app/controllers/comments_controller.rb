@@ -15,7 +15,7 @@ def create
 
         if @comment.save
     	   
-        	format.html{ redirect_to projects_path(@project.id), notice: "Thanks for your opinion! Comment created." }
+        	format.html{ redirect_to project_path(@project), notice: "Thanks for your opinion! Comment created." }
     		format.js{}
     	else
     		format.html{ render "projects/show", alert: "Your comment could not be created, sucka!" }
