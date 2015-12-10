@@ -15,8 +15,9 @@
 		<%= f.label :funding_goal %>
 		<%= f.text_field :funding_goal %>
 	</div>
+    <%= f.hidden_field :total, :value => "1" %>
 
-    <%= f.hidden_field :service, value: Time.now %>
+    <%= f.hidden_field :start_date, :value => Time.now %>
  
 
 	<div class="field">

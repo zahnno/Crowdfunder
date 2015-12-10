@@ -7,7 +7,12 @@ end
 
 def create
    @pledge = Pledge.new(pledge_params)
-   @project.total += @pledge.amount
+   if @project.total != nil
+      @project.total += @pledge.amount
+   else
+    @project.total = 0
+    @project.total += @pledge.amount
+  end
    
    if @pledge.save && @project.save
    	redirect_to project_pledge_path(@project, @pledge)
