@@ -7,7 +7,7 @@
 
   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
 <p><%= link_to "Back", projects_path(@projects) %> </p>
-<p>Total Raised: <%= @project.total %></p>
+<p>Total Raised: <%= @project.total %>$</p>
 </div>
 <h2>Rewards</h2>
 <div>
@@ -15,7 +15,7 @@
   	<ul>
     	<li>Title: <%= reward.title %></li>
     	<li>Description: <%= reward.description %></li>
-    	<li>Amount: <%= reward.amount %></li>
+    	<li>Amount: <%= reward.amount %>$</li>
   	</ul>
 	<% end %>
 </div>
