@@ -12,7 +12,7 @@
           Funding for this project has ended.
         <% end %>
     </li>
-    </ul>
+  </ul>
 
 
   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
@@ -39,8 +39,8 @@
   <ul>
 <p><li><strong><%= comment.text %></strong></li></p>
 <p>Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></p>
-</ul> 
-<% end %> 
+</ul>
+<% end %>
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
