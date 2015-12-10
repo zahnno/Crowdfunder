@@ -6,15 +6,10 @@
 	<ul>
     <li>Description: <%= @project.description %></li>
   </ul>
-
-  <%= link_to "Pledge!", new_project_pledge_path(@project) %>
-<<<<<<< HEAD
-
-=======
-<p><%= link_to "Back", projects_path(@projects) %> </p>
+  
 <p>Funding Goal: <%= @project.funding_goal %></p>
->>>>>>> refs/remotes/origin/master
 <p>Total Raised: <%= @project.total %>$</p>
+<%= link_to "Pledge!", new_project_pledge_path(@project) %>
 
 </div>
 <h2>Rewards</h2>
