@@ -1,0 +1,6 @@
+<% if params[:project_id] %>
+  $("#project_comments").html('<%= j(render :partial => "/projects/comments") %>')
+<% else %>
+  $("#user_comments").html('<%= j(render :partial => "/users/comments") %>')
+<% end %>
+$("#new_comment")[0].reset();

@@ -28,7 +28,7 @@
 <% @project.comments.each do |comment| %>
   <ul>
 <p><li><strong><%= comment.text %></strong></li></p>
-<p>Posted By: <em><%= comment.user.first_name %></em>. Added on <%= comment.created_at %></p>
+<p>Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></p>
 </ul> 
 <% end %> 
 
