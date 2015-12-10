@@ -3,8 +3,16 @@
 <div>
 	<ul>
     <li>Description: <%= @project.description %></li>
-    <li>This project ends in <%= distance_of_time_in_words_to_now(@project.end_date)%></li>
-  </ul>
+    <li>
+
+        <% if (Time.now() < @project.end_date) %>
+          This project ends in <%= distance_of_time_in_words_to_now(@project.end_date) %>.
+        <% else %>
+          Funding for this project has ended.
+        <% end %>
+
+    </li>
+    </ul>
 
   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
 <p><%= link_to "Back", projects_path(@projects) %> </p>
