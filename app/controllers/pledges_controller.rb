@@ -7,7 +7,8 @@ end
 
 def create
    @pledge = Pledge.new(pledge_params)
-   @pledge.user_id = current_user.id
+   @pledge.user = current_user
+
    if @project.total != nil
       @project.total += @pledge.amount
    else
