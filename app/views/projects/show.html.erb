@@ -23,16 +23,12 @@
 <h3>Comments</h3>
 
 <% @project.comments.each do |comment| %>
-<<<<<<< Updated upstream
-<%= comment.text %>
-<% end %>
-=======
+
   <ul>
 <p><li><strong><%= comment.text %></strong></li></p>
 <p>Posted By: <em><%= comment.user.first_name %></em>. Added on <%= comment.created_at %></p>
 </ul> 
 <% end %> 
->>>>>>> Stashed changes
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
@@ -64,4 +60,3 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 <% end %>
-
