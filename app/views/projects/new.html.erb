@@ -21,7 +21,7 @@
 
 	<div class="field">
 		<%= f.label :end_date %>
-		<%= f.datetime_field :end_date %>
+		<%= f.datetime_select :end_date, start_year: 2015, discard_minute: true, discard_hour: true %>
 	</div>
 
 
