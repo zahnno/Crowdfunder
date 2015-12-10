@@ -3,9 +3,12 @@ class CommentsController < ApplicationController
 	before_filter :load_project
 
 
+
 def create
 
     @comment = Comment.new(comment_params)    
+    @comment.project_id = @project.id
+    @comment.user = current_user
 
 
      respond_to do |format|

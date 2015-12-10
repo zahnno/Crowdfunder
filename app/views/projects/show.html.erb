@@ -24,9 +24,9 @@
 
 <h3>Comments</h3>
 
-<div id="comment-list">
- <%= render partial: "comments"  %> 
-</div>
+<% @project.comments.each do |comment| %>
+<%= comment.text %>
+<% end %> 
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
@@ -53,9 +53,7 @@
     </div>
   <% end %>
 
-  <% if @comment.save %>
-      <%=render "comments" %>
-      <% end %>
+  
 
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
