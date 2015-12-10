@@ -14,11 +14,18 @@
     </li>
   </ul>
 
-
+   <% if (Time.now() < @project.end_date) %>
   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
+  <% else %>
+  <% end %>
+
 
 <p>Funding Goal: <%= @project.funding_goal %></p>
+<% if @project.total == nil %>
+<p>No one has pledge to this project</p>
+<% else %>
 <p>Total Raised: <%= @project.total %>$</p>
+<% end %>
 
 
 </div>
@@ -68,7 +75,12 @@
   <% end %>
 
 
-
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 <% end %>
+
+<% if @project.total == nil || @project.total < 0 && @project.owner_id == current_user.id %>
+<%= link_to "Delete", project_path(@project), method: :delete %><br></p>
+<% elsif current_user == nil %>
+<% end %>
+

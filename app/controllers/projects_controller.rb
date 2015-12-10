@@ -29,7 +29,6 @@ class ProjectsController < ApplicationController
 		else
 			render :new
 		end
-
 	end
 
 	def update
