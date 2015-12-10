@@ -11,7 +11,8 @@ class CategoriesController < ApplicationController
 		@category = Category.new
 	end
 
-	private category.params
+	private
+	def category_params
 		params.require(:category).permit(:name, :category_id)
 	end
 end
