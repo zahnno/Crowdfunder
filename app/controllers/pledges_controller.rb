@@ -18,7 +18,6 @@ def create
    if @pledge.save && @project.save
    	redirect_to project_pledge_path(@project, @pledge)
    end
-   byebug
 
    
 end
