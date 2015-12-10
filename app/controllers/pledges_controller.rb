@@ -7,7 +7,8 @@ end
 
 def create
    @pledge = Pledge.new(pledge_params)
-   @pledge.user_id = current_user.id
+   @pledge.user = current_user
+
    if @project.total != nil
       @project.total += @pledge.amount
    else
@@ -18,8 +19,7 @@ def create
    if @pledge.save && @project.save
    	redirect_to project_pledge_path(@project, @pledge)
    end
-
-   
+   byebug
 end
 
 def show
