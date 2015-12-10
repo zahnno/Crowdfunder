@@ -5,6 +5,13 @@
 
 	<ul>
     <li>Description: <%= @project.description %></li>
+    <li>
+        <% if (Time.now() < @project.end_date) %>
+          This project ends in <%= distance_of_time_in_words_to_now(@project.end_date) %>.
+        <% else %>
+          Funding for this project has ended.
+        <% end %>
+    </li>
   </ul>
 
 
@@ -32,8 +39,8 @@
   <ul>
 <p><li><strong><%= comment.text %></strong></li></p>
 <p>Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></p>
-</ul> 
-<% end %> 
+</ul>
+<% end %>
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
