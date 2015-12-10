@@ -20,18 +20,14 @@
 	<% end %>
 </div>
 
-
-
 <h3>Comments</h3>
 
 <% @project.comments.each do |comment| %>
-<<<<<<< HEAD
-<%= comment.text %><br>
+  <ul>
+<p><li><strong><%= comment.text %></strong></li></p>
+<p>Posted By: <em><%= comment.user.first_name %></em>. Added on <%= comment.created_at %></p>
+</ul> 
 <% end %> 
-=======
-<%= comment.text %>
-<% end %>
->>>>>>> 1b3896e1afd7e48180ef12a33f4b160593083972
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
@@ -63,4 +59,3 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 <% end %>
-
