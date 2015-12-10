@@ -25,8 +25,13 @@
 <h3>Comments</h3>
 
 <% @project.comments.each do |comment| %>
+<<<<<<< HEAD
 <%= comment.text %><br>
 <% end %> 
+=======
+<%= comment.text %>
+<% end %>
+>>>>>>> 1b3896e1afd7e48180ef12a33f4b160593083972
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
@@ -53,7 +58,7 @@
     </div>
   <% end %>
 
-  
+
 
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
