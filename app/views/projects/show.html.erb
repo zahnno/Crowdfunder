@@ -4,13 +4,11 @@
 	<ul>
     <li>Description: <%= @project.description %></li>
     <li>
-
         <% if (Time.now() < @project.end_date) %>
           This project ends in <%= distance_of_time_in_words_to_now(@project.end_date) %>.
         <% else %>
           Funding for this project has ended.
         <% end %>
-
     </li>
     </ul>
 
