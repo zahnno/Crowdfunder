@@ -3,6 +3,7 @@ before_filter :load_project
 
 def new
   @pledge = Pledge.new
+  @project.total = 0
 end
 
 def create
