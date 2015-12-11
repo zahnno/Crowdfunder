@@ -6,22 +6,40 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<div>
-	<% if current_user %>
-	        Signed in as <%= link_to current_user.first_name, current_user %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-	      <% else %>
 
-	      <div class = "signup">
-	        <%= link_to "Sign up", new_user_path %>
-	      </div>
-	      <div class = "login">
-	        <%= link_to "Log in", new_session_path %> 
-	      </div>
-	      <% end %>
+<div class="top-banner">
+
+  <div class="crowd-logo"> 
+    <img src="http://dacura.cs.tcd.ie/wp-content/uploads/2014/04/icon_4199.png">
+  </div>
+
+  <div class="web-logo">
+    <h1>Crowd</h1><h1 style="color:#990099;">Funder</h1>
+  </div>
+
+	<% if current_user %>
+	   Signed in as <%= link_to current_user.first_name, current_user %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+	<% else %>
+
+	   <div class = "signup">
+	     <%= link_to "Sign up", new_user_path %>
+	   </div>
+
+	   <div class = "login">
+	     <%= link_to "Log in", new_session_path %> 
+	   </div>
+	<% end %>
+
 	<div class = "project">
 	<%= link_to "Projects", projects_path%><br>
 	</div>
+
+  <div class = "discover">
+  <%= link_to "Discover", categories_path %>
+  </div>
+
 </div>
+
 <body>
 <% if flash[:notice] %>
       <p id="notice"><%= flash[:notice] %></p>
