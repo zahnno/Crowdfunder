@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 <%= link_to "Back", projects_path(@projects) %>
 <h1><%= @project.name %></h1>
 
@@ -72,11 +74,16 @@
       <%= f.label :text %><br />
       <%= f.text_area :text %>
     </div>
-    <div class="actions">
+    <div id="comment">
       <%= f.submit %>
     </div>
   <% end %>
 
+<script>
+  $("#comment").click(function(){
+  alert( "Comment Created" );
+});
+</script>
 
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
