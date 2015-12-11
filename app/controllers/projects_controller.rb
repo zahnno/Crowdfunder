@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+		 @categories = Category.all
 	end
 
 	def edit
@@ -23,7 +24,7 @@ class ProjectsController < ApplicationController
 	def create
 		@project = Project.new(project_params)
 		@project.user = current_user
-
+        @categories = Category.all
 		if @project.save
 			redirect_to projects_path
 		else
@@ -49,7 +50,7 @@ class ProjectsController < ApplicationController
 
 	private
 		def project_params
-			params.require(:project).permit(:name, :description, :start_date, :end_date, :funding_goal, :user_id, rewards_attributes: [:title, :amount, :description, :_destroy])
+			params.require(:project).permit(:name, :description, :start_date, :end_date, :funding_goal, :user_id, :category_id, rewards_attributes: [:title, :amount, :description, :_destroy])
 		end
  
 end

@@ -25,6 +25,12 @@
 		<%= f.datetime_select :end_date, start_year: 2015, discard_minute: true, discard_hour: true %>
 	</div>
 
+	<div class="field">
+	    <%= f.label "category" %>
+		<%= f.collection_select :category_id, @categories, :id, :name, include_blank: true %>
+	</div>
+
+
 
 	<h2>Rewards</h2>
 
