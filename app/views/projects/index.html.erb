@@ -1,14 +1,18 @@
 <%= stylesheet_link_tag "application.css" %>
 
-<h1>Projects</h1>
+<p class="current-display">Current Projects</p>
 
 <% @projects.each do |project| %>
-<table class="main-project">
-	<tr>
-		<td><img style= "width: 150px; height: 100px;" src="<%= project.image %>"></td>
-		<td><%= link_to "#{project.name}", project_path(project) %></td>
-		<td><%= project.funding_goal %>$</td>
-	</tr>
-</table>
+<div class="main-project">
+		<img style= "width: 325px; height: 200px;" src="<%= project.image %>">
+		<div class="info-box">
+		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
+		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>
+		<p class="description"><%= project.description%></p>
+		<p class="project-fund">Goal: <%= project.funding_goal %></p>		
+		<p class="project-pledged">Pledged: <%= project.total %></p>
+		</div>
+		</div>
+</div>
 	
 <% end %>
