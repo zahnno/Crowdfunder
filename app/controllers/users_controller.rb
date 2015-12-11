@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@pledges = @user.pledges
 		@projects = @user.projects
+		@total = 0
 	end
 	def create
 		@user = User.new(user_params)
