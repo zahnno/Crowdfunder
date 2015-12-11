@@ -28,6 +28,7 @@
 <p>Total Raised: <%= @project.total %>$</p>
 <% end %>
 
+<p>Project Creator: <%= link_to "#{@project.user.name}", user_path(@project.user) %></p>
 
 </div>
 <h2>Rewards</h2>
