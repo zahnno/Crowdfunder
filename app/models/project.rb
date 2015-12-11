@@ -6,4 +6,5 @@ class Project < ActiveRecord::Base
 	has_many :users, through: :reservations
 	belongs_to :user
 	belongs_to :category
+
 end

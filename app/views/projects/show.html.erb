@@ -43,15 +43,16 @@
   	</ul>
   <% end %>
 </div>
-
-<h3>Comments</h3>
+<div id="sep">
+<h3 id="t">Comments</h3>
 
 <% @project.comments.each do |comment| %>
   <ul>
-<p><li><strong><%= comment.text %></strong></li></p>
-<p>Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></p>
+<p id="com"><strong><%= comment.text %></strong></p>
+<p><li id="poster">Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></li></p>
 </ul>
 <% end %>
+</div>
 
   <% if current_user %>
   <h4>Add a Comment:</h4>
