@@ -18,8 +18,14 @@
   </div>
 
 	<% if current_user %>
-	   Signed in as <%= link_to current_user.first_name, current_user %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+       <div class = "signup">
+     <%= link_to "Log out", session_path("current"), :method => :delete %>
+     </div>
+     <div class = "login">
+     <%= link_to "Profile", current_user %>
+     </div>
 	<% else %>
+
 
 	   <div class = "signup">
 	     <%= link_to "Sign up", new_user_path %>

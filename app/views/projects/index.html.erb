@@ -9,8 +9,8 @@
 		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
 		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>
 		<p class="description"><%= project.description%></p>
-		<p class="project-fund">Goal: <%= project.funding_goal %></p>		
-		<p class="project-pledged">Pledged: <%= project.total %></p>
+		<p class="project-fund">Goal: <%= project.funding_goal %>$</p>		
+		<p class="project-pledged">Pledged: <%= project.total %>$</p>
 		</div>
 		</div>
 </div>
