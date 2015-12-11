@@ -13,6 +13,43 @@
  *= require_tree .
  *= require_self
  */
+.pledge-button {
+	background-color: #990099;;
+	padding: 15px 40px;
+	color: white;
+	border-radius: 4px ;
+}
+ .project-side {
+	display: inline-block;
+	margin-left: 40px;
+	height: 400px;
+	position: absolute;
+	font-family: arial;
+
+ }
+
+ .project-image {
+ 	margin-left: 12%;
+ 	display: inline-block;
+ }
+
+ .project-image img{
+ 	width: 600px;
+ 	height: 500px;
+ }
+.project-creator{
+	width: 100%;
+	text-align: center;
+}
+
+.project-creator a{
+	color: grey;
+}
+ .main-project-name {
+ 	width:100%;
+ 	font-family: Arial;
+ 	text-align: center;
+ }
 .category-show {
 	display: inline-block;
 	margin-left: 10%;

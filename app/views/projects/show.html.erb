@@ -1,37 +1,45 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-<h1><%= @project.name %></h1>
+<h1 class="main-project-name"><%= @project.name %></h1>
+<p class="project-creator">by <%= link_to "#{@project.user.name}", user_path(@project.user) %></p>
 
-<div>
+
+<div class="project-image">
 <img src="<%= @project.image %>">
-	<ul>
-    <li>Description: <%= @project.description %></li>
-    <li>
+</div>
+
+<div class="project-side">
+    <p style="font-size: 40px; font-weight:bold; margin-bottom: 5px;"><%= @project.pledges.count %></p>
+    <p style="font-size: 15px; font-weight:bold; margin-bottom: 5px;">Pledgers</p>
+
+ 
+    <% if @project.total == nil %>
+    <p style="font-size: 40px; font-weight:bold; margin-bottom: 5px;">0</p>
+    <% else %>
+    <p style="font-size: 40px; font-weight:bold; margin-bottom: 5px;">$<%= @project.total %></p>
+    <% end %>
+    <p style="font-size: 15px; margin-bottom: 25px; font-weight:bold;">Funding of $<%= @project.funding_goal %> goal</p>
+    <p style="color: grey; height: 100px; width: 300px;"><%= @project.description %></p>
+    
         <% if (Time.now() < @project.end_date) %>
-          This project ends in <%= distance_of_time_in_words_to_now(@project.end_date) %>.
+          <p style="margin-bottom: 45px;">This project ends in <%= distance_of_time_in_words_to_now(@project.end_date) %>.</p>
         <% else %>
           Funding for this project has ended.
         <% end %>
-    </li>
-  </ul>
+    </p>
 
    <% if (Time.now() > @project.end_date) %>
    <p>This project has expired!</p>
   <% else %>
-   <%= link_to "Pledge!", new_project_pledge_path(@project) %>
+   <%= link_to "Pledge!", new_project_pledge_path(@project), class: 'pledge-button' %>
   <% end %>
 
 
-<p>Funding Goal: <%= @project.funding_goal %></p>
-<% if @project.total == nil %>
-<p>No one has pledge to this project</p>
-<% else %>
-<p>Total Raised:$ <%= @project.total %></p>
-<% end %>
 
-<p>Project Creator: <%= link_to "#{@project.user.name}", user_path(@project.user) %></p>
 
 </div>
+
+
 <h2>Rewards</h2>
 <div>
 	<% @project.rewards.each do |reward| %>
@@ -48,9 +56,11 @@
 
 <% @project.comments.each do |comment| %>
   <ul>
-<p id="com"><strong><%= comment.text %></strong></p>
-<p><li id="poster">Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></li></p>
+  <div id='com'>
+<p><strong><%= comment.text %></strong></p>
+<p><li>Posted By: <em><%= comment.user.name %></em>. Added on <%= comment.created_at %></li></p>
 </ul>
+</div>
 <% end %>
 </div>
 
