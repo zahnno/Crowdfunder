@@ -26,7 +26,7 @@
 <% if @project.total == nil %>
 <p>No one has pledge to this project</p>
 <% else %>
-<p>Total Raised: <%= @project.total %>$</p>
+<p>Total Raised:$ <%= @project.total %></p>
 <% end %>
 
 <p>Project Creator: <%= link_to "#{@project.user.name}", user_path(@project.user) %></p>
@@ -39,7 +39,7 @@
   	<ul>
     	<li>Title: <%= reward.title %></li>
     	<li>Description: <%= reward.description %></li>
-    	<li>Amount: <%= reward.amount %>$</li>
+    	<li>Amount:$ <%= reward.amount %></li>
   	</ul>
   <% end %>
 </div>
