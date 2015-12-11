@@ -2,7 +2,7 @@
 <h1><%= @project.name %></h1>
 
 <div>
-
+<img src="<%= @project.image %>">
 	<ul>
     <li>Description: <%= @project.description %></li>
     <li>
@@ -34,12 +34,13 @@
 <h2>Rewards</h2>
 <div>
 	<% @project.rewards.each do |reward| %>
+  <img src= "<%= reward.image %>">
   	<ul>
     	<li>Title: <%= reward.title %></li>
     	<li>Description: <%= reward.description %></li>
     	<li>Amount: <%= reward.amount %>$</li>
   	</ul>
-	<% end %>
+  <% end %>
 </div>
 
 <h3>Comments</h3>
