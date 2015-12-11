@@ -1,5 +1,11 @@
 <h1><%= @category.name %></h1>
 
+<<<<<<< Updated upstream
 <% @category.projects.each do |project| %>
 <p><%= link_to "#{project.name}", project_path(project) %></p>
 <% end %>
+=======
+	<h1><%= @category.name %></h1>
+
+	<%= link_to project_path %>
+>>>>>>> Stashed changes
