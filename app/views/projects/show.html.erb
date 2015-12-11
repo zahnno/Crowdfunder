@@ -79,11 +79,6 @@
     </div>
   <% end %>
 
-<script>
-  $("#comment").click(function(){
-  alert( "Comment Created" );
-});
-</script>
 
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>

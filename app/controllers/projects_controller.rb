@@ -6,15 +6,15 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find(params[:id]) 
+		
 		if current_user
      		@comment = Comment.new
     	end
-
 	end
 
 	def new
 		@project = Project.new
-		 @categories = Category.all
+		@categories = Category.all
 	end
 
 	def edit

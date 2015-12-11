@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 	has_many :projects
 	has_many :pledges_projects, through: :pledges, source: :project
 	has_many :comments
-	has_many :projects, through: :pledges
 	has_many :pledges
 	
 def name
