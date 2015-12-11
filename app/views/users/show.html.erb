@@ -5,9 +5,12 @@
 	</h1>
 
 	<h2><%= @user.email %></h2>
+
 <h3><%= @user.first_name%>'s' Projects</h3>
 <% @user.projects.each do |project| %>
 <p>project name: <%= link_to "#{project.name}", project_path(project) %></p>
+<p>Project pledge amount total:<%= project.total %>$</p>
+<p>Total Pledges <%= project.pledges.count%></p>
 <% end %>
 
 <h3>Pledges</h3>
