@@ -1,9 +1,9 @@
 <h2>Thank you for the Pledge!</h2>
-<p>Amount: <%= @pledge.amount %>$</p>
-<p>Total project amount: <%= @project.total %>$<p>
-<p>Project funding goal: <%= @project.funding_goal %>$</p>
+<p>Amount: $<%= @pledge.amount %></p>
+<p>Total project amount: $<%= @project.total %><p>
+<p>Project funding goal: $<%= @project.funding_goal %></p>
 <% if (@project.funding_goal - @project.total) >= 0 %>
-<p><%= @project.funding_goal - @project.total %>$ to go!</p>
+<p>$<%= @project.funding_goal - @project.total %> to go!</p>
 <% else %>
 <p>This project is <%= ((@project.total.to_f/@project.funding_goal)*100).round() %> % funded!</p>
 <% end %>
