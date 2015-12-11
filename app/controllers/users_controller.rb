@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 		@pledges = @user.pledges
 		@projects = @user.projects
 		@total = 0
+		@numofpledges = 0
 	end
 	def create
 		@user = User.new(user_params)
