@@ -1,10 +1,10 @@
 <%= stylesheet_link_tag "application.css" %>
-
+<% if @projects != nil %>
 <p class="current-display">Current Projects</p>
 
 <% @projects.each do |project| %>
 <div class="main-project">
-		<img style= "width: 325px; height: 200px;" src="<%= project.image %>">
+		<img style= "width: 325px; height: 200px; border-radius: 4px;" src="<%= project.image %>">
 		<div class="info-box">
 		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
 		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>
@@ -16,3 +16,13 @@
 </div>
 	
 <% end %>
+<%end%>
+
+<h1>Categories</h1>
+	
+	<% @categories.each do |category| %>
+		<div class="category-show">
+		    <img style="width:200px; height: 200px;" src="<%= category.image %>">
+			<%= link_to category.name, category_path(category) %>
+	    </div>
+	<% end %>

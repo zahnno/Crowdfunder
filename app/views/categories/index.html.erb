@@ -1,8 +1,10 @@
+<%= stylesheet_link_tag "categories.scss" %>
+
 <h1>Categories</h1>
-	<ul>
+	
 	<% @categories.each do |category| %>
-		<li>
+		<div class="category-show">
+		    <img style="width:200px; height: 200px;" src="<%= category.image %>">
 			<%= link_to category.name, category_path(category) %>
-		</li>
+	    </div>
 	<% end %>
-</ul>

@@ -1,6 +1,17 @@
 <h1><%= @category.name %></h1>
 
 <% @category.projects.each do |project| %>
-<p><%= link_to "#{project.name}", project_path(project) %></p>
+<div class="main-project">
+		<img style= "width: 325px; height: 200px; border-radius: 4px;" src="<%= project.image %>">
+		<div class="info-box">
+		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
+		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>
+		<p class="description"><%= project.description%></p>
+		<p class="project-fund">Goal: <%= project.funding_goal %>$</p>		
+		<p class="project-pledged">Pledged: <%= project.total %>$</p>
+		</div>
+		</div>
+</div>
+	
 <% end %>
 
