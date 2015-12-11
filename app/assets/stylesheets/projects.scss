@@ -1,3 +1,49 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+       overflow-y: scroll;
+}
+
+#com {
+	color: black;
+	font-family: Arial;
+	border: 5px solid black;
+	padding: 10px;
+	animation: color-me-in 5s;
+	width: 150px;
+ 	background-color: beige;
+ 	border-radius: 25px;
+  	
+}
+
+#com:hover {
+  width: 90%;
+  
+}
+
+@keyframes color-me-in {
+  0% {
+    background: #6495ED;
+  }
+  100% {
+    background: beige;
+  }
+}
+
+#sep {
+	border: 5px solid black;
+	border-radius: 25px;
+	background-color: #990099;
+}
+
+#t {
+	text-align: center;
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+#poster {
+	list-style-position: inside;
+}
