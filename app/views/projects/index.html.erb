@@ -6,7 +6,7 @@
 	<% @projects.each do |project| %>
 		<li>
 			<%= link_to "#{project.name}", project_path(project) %>
-		    <%= project.funding_goal %>
+		    <%= project.funding_goal %>$
 		</li>
 	<% end %>
 </ul>
