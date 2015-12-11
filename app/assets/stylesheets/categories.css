@@ -1,4 +1,13 @@
-.category-show {
+.category-link img {
 	display: inline-block;
-	margin-left: 8%;
+	margin-left: 10%;
+	height:200px;
+	width: 200px;
+}
+
+.category-name {
+	padding-left: 40%;
+	color: black;
+	font-family: arial;
+	font-weight: bold;
 }
