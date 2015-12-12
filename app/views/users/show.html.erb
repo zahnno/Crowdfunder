@@ -1,25 +1,44 @@
 
 <br>
 <%= link_to "New Project", new_project_path %>
-	<h1>
-		<%= @user.first_name %><%= @user.last_name %>
+	<h1 style="width: 100%; text-align: center; font-family: arial;">
+		<%= @user.first_name %> <%= @user.last_name %>
 	</h1>
+	<h3 style="width: 100%; text-align: center; font-family: arial"><%= @user.first_name%>'s Projects</h3>
 
-<h3><%= @user.first_name%>'s Projects</h3>
+
 <% @user.projects.each do |project| %>
-<p>project name: <%= link_to "#{project.name}", project_path(project) %></p>
-<p>Project pledge amount total:$<%= project.total %></p>
-<p>Total Pledges <%= project.pledges.count%></p>
+<div class="main-project">
+		<%= link_to image_tag(project.image), project_path(project), class: 'project-img-link' %>
+		<div class="info-box">
+		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
+		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>
+		<p class="description"><%= project.description%></p>
+		<p class="project-fund">Goal: <%= project.funding_goal %>$</p>		
+		<p class="project-pledged">Pledged: <%= project.total %>$</p>
+		</div>
+		</div>
+</div>
+	
 <% end %>
 
-<h3>Pledges</h3>
+<h3 style="width: 100%; text-align: center; margin-top: 100px; margin-bottom: 20px; border-top: 2px solid lightgrey; padding-top: 40px; font-family: arial;">Pledges</h3>
+
 <% @user.pledges.each do |pledge|%>
-    <p>pledge name: <%= link_to "#{pledge.project.name}", project_path(pledge.project) %></p>
+   	<div class="user-pledges">
+    <p style= "font-size: 25px; font-weight: bold;">Project name: <%= link_to "#{pledge.project.name}", project_path(pledge.project) %></p>
 	<p>pledge amount: <%= pledge.amount %></p>
     <%@total += pledge.amount %>
     <%@numofpledges += 1 %>
+    </div>
 <% end %>
-<p>Total amount you have pledge: <%= @total %></p>
-<p>Number of Pledges: <%= @numofpledges %></p>
+<h3 style="width:100%; text-align:center; padding-top: 25px; border-top: 2px solid lightgrey;">Stats</h3>
+<div class="stats">
+<p>You have pledge a total amount of $<%= @total %>!</p>
+<p>You have pledged <%= @numofpledges %> times!</p>
+</div>
+
+
+
 
 

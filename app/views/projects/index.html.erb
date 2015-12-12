@@ -4,7 +4,7 @@
 
 <% @projects.each do |project| %>
 <div class="main-project">
-		<img style= "width: 325px; height: 200px; border-radius: 4px;" src="<%= project.image %>">
+		<%= link_to image_tag(project.image), project_path(project), class: 'project-img-link' %>
 		<div class="info-box">
 		<p class="project-name"><%= link_to "#{project.name}", project_path(project) %></p>
 		<p class="creator"><%= link_to "#{project.user.name}", user_path(project.user) %></p>

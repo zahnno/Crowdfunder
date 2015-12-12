@@ -40,17 +40,21 @@
 </div>
 
 
-<h2>Rewards</h2>
+<h2 style="font-family: arial; width: 100%; text-align: center; padding-top: 50px; border-top: 2px solid lightgrey;">Rewards</h2>
 <div>
 	<% @project.rewards.each do |reward| %>
-  <img src= "<%= reward.image %>">
-  	<ul>
-    	<li>Title: <%= reward.title %></li>
-    	<li>Description: <%= reward.description %></li>
-    	<li>Amount:$ <%= reward.amount %></li>
-  	</ul>
-  <% end %>
+<div class="main-reward">
+  <img style = "width: 325px; height: 200px: border-radius: 5px;"src= "<%= reward.image %>">
+  <div class="reward-info">
+    	<p class="reward-title"><%= reward.title %></p>
+    	<p class="reward-description"><%= reward.description %></p>
+    	<p class="reward-amount">Amount:$ <%= reward.amount %></p>
+      </div>
 </div>
+  <% end %>
+
+
+
 <div id="sep">
 <h3 id="t">Comments</h3>
 
@@ -81,7 +85,6 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :text %><br />
       <%= f.text_area :text %>
     </div>
     <div id="comment">
