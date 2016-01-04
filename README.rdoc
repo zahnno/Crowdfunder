@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Crowdfunder is a web Application where users may post projects that require funding from others, while other users pledge to those projects to recieve awards.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+In Terminal 
+
+- Git clone SSH Key
+- Rails s
+- Open in webrowser localhost:3000
+
+bundle install just to be safe
