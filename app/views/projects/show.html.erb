@@ -97,8 +97,10 @@
   <p>Please <%= link_to "log in", new_session_path %> to add a comment.</p>
 <% end %>
 
-<% if @project.total == nil || @project.total <= 0 && @project.owner_id == current_user.id %>
+<% unless current_user.blank? %>
+<% if @project.total == nil && @project.user_id == current_user.id %>
 <%= link_to "Delete", project_path(@project), method: :delete %><br></p>
 <% elsif current_user == nil %>
+<% end %>
 <% end %>
 
